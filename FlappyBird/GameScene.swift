@@ -302,6 +302,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    func itemDidCollideWithBird(item:SKNode) {
+         print("Hit")
+         item.removeFromParent()
+         
+     }
+    
     // SKPhysicsContactDelegateのメソッド。衝突したときに呼ばれる
     func didBegin(_ contact: SKPhysicsContact) {
         // ゲームオーバーのときは何もしない
@@ -327,7 +333,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         print("ScoreUp")
         itemScore += 1
         itemScoreLabelNode.text = "itemScore:\(itemScore)"
-     
             
         } else {
             // 壁か地面と衝突した
@@ -345,6 +350,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
         
     }
+    
+ 
     
     func setupScoreLabel() {
         score = 0
@@ -422,6 +429,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             // スプライトに物理演算を設定する
             upper.physicsBody = SKPhysicsBody(rectangleOf: itemTexture.size())
             upper.physicsBody?.categoryBitMask = self.itemCategory
+            
+            
             
             item.addChild(upper)
             // スコアアップ用のノード --- ここから ---
