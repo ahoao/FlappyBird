@@ -1,11 +1,3 @@
-//
-//  ViewController.swift
-//  FlappyBird
-//
-//  Created by Ao Nagasawa on 2020/08/21.
-//  Copyright © 2020 Ao.Nagasawa. All rights reserved.
-//
-
 import UIKit
 import SpriteKit
 
@@ -34,7 +26,7 @@ class ViewController: UIViewController {
     // ステータスバーを消す
     override var prefersStatusBarHidden: Bool {
         get{
-            return true 
+            return true
         }
     }
     
